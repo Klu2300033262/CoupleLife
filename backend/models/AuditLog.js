@@ -2,6 +2,7 @@ const mongoose = require('mongoose');
 
 const AuditLogSchema = new mongoose.Schema({
   user_id: { type: mongoose.Schema.Types.ObjectId, ref: 'User', required: true },
+  couple_id: { type: mongoose.Schema.Types.ObjectId, ref: 'Couple' },
   action: { type: String, required: true },
   old_value: { type: mongoose.Schema.Types.Mixed },
   new_value: { type: mongoose.Schema.Types.Mixed },

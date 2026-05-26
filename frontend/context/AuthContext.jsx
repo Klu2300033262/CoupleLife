@@ -22,32 +22,35 @@ export const AuthProvider = ({ children }) => {
   const isAuthAction = React.useRef(false);
 
   useEffect(() => {
-    const unsubscribe = onAuthStateChanged(auth, async (user) => {
-      setCurrentUser(user);
-      if (user) {
-        if (isAuthAction.current) {
-          // If we are explicitly logging in or signing up, that function handles the backend fetch
-          setLoading(false);
-          return;
-        }
-        try {
-          const token = await user.getIdToken();
-          const { user: dbUser } = await getMe(token);
-          setBackendUser(dbUser);
-        } catch (error) {
-          console.error('Error fetching backend user:', error);
-          if (error.response?.status === 404 && !isAuthAction.current) {
-            await auth.signOut();
-          }
-        }
-      } else {
-        setBackendUser(null);
+  if (!auth) {
+    setLoading(false);
+    return;
+  }
+  const unsubscribe = onAuthStateChanged(auth, async (user) => {
+    setCurrentUser(user);
+    if (user) {
+      if (isAuthAction.current) {
+        // If we are explicitly logging in or signing up, that function handles the backend fetch
+        setLoading(false);
+        return;
       }
-      setLoading(false);
-    });
-
-    return unsubscribe;
-  }, []);
+      try {
+        const token = await user.getIdToken();
+        const { user: dbUser } = await getMe(token);
+        setBackendUser(dbUser);
+      } catch (error) {
+        console.error('Error fetching backend user:', error);
+        if (error.response?.status === 404 && !isAuthAction.current) {
+          await auth.signOut();
+        }
+      }
+    } else {
+      setBackendUser(null);
+    }
+    setLoading(false);
+  });
+  return unsubscribe;
+}, []);
 
   const signup = async (email, password, name) => {
     isAuthAction.current = true;

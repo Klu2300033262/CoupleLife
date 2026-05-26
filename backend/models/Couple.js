@@ -4,7 +4,10 @@ const CoupleSchema = new mongoose.Schema({
   couple_id: { type: String, required: true, unique: true },
   created_by: { type: mongoose.Schema.Types.ObjectId, ref: 'User', required: true },
   partner_id: { type: mongoose.Schema.Types.ObjectId, ref: 'User' },
-  couple_key: { type: String, required: true, unique: true },
+  invite_code: { type: String, required: true, unique: true },
+  code_expires_at: { type: Date },
+  anniversary_date: { type: Date },
+  relationship_started_at: { type: Date },
   created_at: { type: Date, default: Date.now },
   linked: { type: Boolean, default: false }
 });
