@@ -1,0 +1,38 @@
+{
+  "name": "couplelife-os",
+  "version": "0.1.0",
+  "private": true,
+  "description": "CoupleLife OS — relationship management platform for couples",
+  "workspaces": [
+    "frontend",
+    "backend"
+  ],
+  "scripts": {
+    "dev": "concurrently \"npm run dev -w backend\" \"npm run dev -w frontend\"",
+    "dev:backend": "npm run dev -w backend",
+    "dev:frontend": "npm run dev -w frontend",
+    "build": "npm run build -w frontend",
+    "start": "npm run start -w backend",
+    "lint": "npm run lint -w frontend && npm run lint -w backend",
+    "format": "prettier --write \"**/*.{js,jsx,json,md,css}\"",
+    "prepare": "husky || true"
+  },
+  "devDependencies": {
+    "concurrently": "^9.1.2",
+    "husky": "^9.1.7",
+    "lint-staged": "^15.4.3",
+    "prettier": "^3.5.3"
+  },
+  "lint-staged": {
+    "*.{js,jsx}": [
+      "eslint --fix",
+      "prettier --write"
+    ],
+    "*.{json,md,css}": [
+      "prettier --write"
+    ]
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  }
+}

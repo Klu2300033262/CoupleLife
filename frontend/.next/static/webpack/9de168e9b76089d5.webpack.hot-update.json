@@ -1,0 +1,15 @@
+{
+  "c": ["webpack"],
+  "r": ["pages/profile/settings", "pages/auth/join-couple"],
+  "m": [
+    "../node_modules/next/dist/build/webpack/loaders/next-client-pages-loader.js?absolutePagePath=C%3A%5CCoupleLife%5Cfrontend%5Cpages%5Cprofile%5Csettings.jsx&page=%2Fprofile%2Fsettings!",
+    "./components/profile/ThemeSwitcher.jsx",
+    "./node_modules/lucide-react/dist/esm/icons/monitor.js",
+    "./node_modules/lucide-react/dist/esm/icons/moon.js",
+    "./node_modules/lucide-react/dist/esm/icons/sun.js",
+    "./pages/profile/settings.jsx",
+    "__barrel_optimize__?names=Monitor,Moon,Sun!=!./node_modules/lucide-react/dist/esm/lucide-react.js",
+    "../node_modules/next/dist/build/webpack/loaders/next-client-pages-loader.js?absolutePagePath=C%3A%5CCoupleLife%5Cfrontend%5Cpages%5Cauth%5Cjoin-couple.jsx&page=%2Fauth%2Fjoin-couple!",
+    "./pages/auth/join-couple.jsx"
+  ]
+}

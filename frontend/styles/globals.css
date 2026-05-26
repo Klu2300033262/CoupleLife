@@ -1,0 +1,20 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    @apply bg-background text-dark antialiased;
+    font-family: 'Inter', sans-serif; /* Fallback if font isn't loaded */
+  }
+}
+
+@layer utilities {
+  .romantic-card {
+    @apply bg-white rounded-xl shadow-romantic p-6;
+  }
+
+  .primary-button {
+    @apply w-full bg-gradient-to-br from-primary to-primary-light text-white rounded-lg py-3.5 font-semibold transition-transform hover:scale-[1.02] active:scale-95;
+  }
+}
