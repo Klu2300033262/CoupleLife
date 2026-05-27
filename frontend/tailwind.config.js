@@ -3,20 +3,20 @@ module.exports = {
   content: [
     "./pages/**/*.{js,ts,jsx,tsx}",
     "./components/**/*.{js,ts,jsx,tsx}",
+    "./styles/**/*.css"
   ],
   theme: {
     extend: {
       colors: {
-        primary: {
-          DEFAULT: '#ff4f9a',
-          light: '#ff85b3'
-        },
+        'primary-pink': '#ff4f9a',
+        'soft-pink': '#ff85b3',
         background: '#fff7fb',
         dark: '#1f2937',
         gray: {
           light: '#6b7280'
         },
-        borderPink: '#ffd1e6'
+        'border-pink': '#ffd1e6',
+        'card-white': '#ffffff'
       },
       boxShadow: {
         'romantic': '0 10px 30px rgba(255, 79, 154, 0.08)',
@@ -27,5 +27,7 @@ module.exports = {
       }
     },
   },
-  plugins: [],
+  plugins: [
+    require('@tailwindcss/typography'),
+  ],
 }

@@ -35,14 +35,14 @@ export default function ProfileDashboard() {
           />
           <button 
             onClick={() => router.push('/profile/edit')}
-            className="absolute bottom-4 right-0 bg-primary text-white p-2 rounded-full shadow-md"
+            className="absolute bottom-4 right-0 bg-primary-pink text-white p-2 rounded-full shadow-md"
           >
             <Edit2 size={16} />
           </button>
         </div>
         <h2 className="text-2xl font-bold text-dark">{backendUser.name}</h2>
         <p className="text-gray-500">@{backendUser.username || 'username'}</p>
-        <div className="bg-pink-50 text-primary px-4 py-1 rounded-full font-semibold text-sm mt-3">
+        <div className="bg-pink-50 text-primary-pink px-4 py-1 rounded-full font-semibold text-sm mt-3">
           {backendUser.relationship_status || 'In Love 💕'}
         </div>
       </div>
@@ -58,7 +58,7 @@ export default function ProfileDashboard() {
               {backendUser.couple_id ? (
                 <>
                   <p className="text-sm text-gray-500 mb-3">Your Couple Key:</p>
-                  <div className="font-mono font-bold text-primary bg-primary/5 py-2 rounded-lg tracking-widest mb-3">
+                  <div className="font-mono font-bold text-primary-pink bg-primary-pink/5 py-2 rounded-lg tracking-widest mb-3">
                     {backendUser.couple_id.couple_key}
                   </div>
                   <button 
@@ -66,7 +66,7 @@ export default function ProfileDashboard() {
                       navigator.clipboard.writeText(backendUser.couple_id.couple_key);
                       alert('Copied!');
                     }}
-                    className="text-sm font-semibold text-primary underline"
+                    className="text-sm font-semibold text-primary-pink underline"
                   >
                     Copy Key
                   </button>
@@ -83,7 +83,7 @@ export default function ProfileDashboard() {
                       console.error(err);
                     }
                   }}
-                  className="bg-primary text-white font-semibold py-2 px-6 rounded-full text-sm"
+                  className="bg-primary-pink text-white font-semibold py-2 px-6 rounded-full text-sm"
                 >
                   Generate Couple Key
                 </button>
@@ -142,7 +142,7 @@ function MenuButton({ icon: Icon, label, onClick }) {
   return (
     <button onClick={onClick} className="w-full flex items-center justify-between p-3 rounded-xl hover:bg-gray-50 transition-colors">
       <div className="flex items-center space-x-3 text-dark font-medium">
-        <div className="p-2 bg-pink-50 text-primary rounded-lg">
+        <div className="p-2 bg-pink-50 text-primary-pink rounded-lg">
           <Icon size={18} />
         </div>
         <span>{label}</span>

@@ -66,7 +66,7 @@ export default function EditProfile() {
         <button 
           onClick={handleSave} 
           disabled={saving}
-          className="w-10 h-10 rounded-full bg-primary flex items-center justify-center text-white shadow-md shadow-primary/30 hover:scale-105 transition-transform disabled:opacity-50"
+          className="w-10 h-10 rounded-full bg-primary-pink flex items-center justify-center text-white shadow-md shadow-primary-pink/30 hover:scale-105 transition-transform disabled:opacity-50"
         >
           <Save size={18} />
         </button>
@@ -97,7 +97,7 @@ export default function EditProfile() {
                 name="name"
                 value={formData.name}
                 onChange={handleChange}
-                className="w-full pl-11 pr-4 py-3.5 bg-white border border-gray-100 rounded-xl text-dark text-sm font-medium focus:outline-none focus:ring-2 focus:ring-primary/20 focus:border-primary/50 transition-all shadow-sm"
+                className="w-full pl-11 pr-4 py-3.5 bg-white border border-gray-100 rounded-xl text-dark text-sm font-medium focus:outline-none focus:ring-2 focus:ring-primary-pink/20 focus:border-primary-pink/50 transition-all shadow-sm"
                 placeholder="Enter username"
               />
             </div>
@@ -131,7 +131,7 @@ export default function EditProfile() {
                 name="location"
                 value={formData.location}
                 onChange={handleChange}
-                className="w-full pl-11 pr-4 py-3.5 bg-white border border-gray-100 rounded-xl text-dark text-sm font-medium focus:outline-none focus:ring-2 focus:ring-primary/20 focus:border-primary/50 transition-all shadow-sm"
+                className="w-full pl-11 pr-4 py-3.5 bg-white border border-gray-100 rounded-xl text-dark text-sm font-medium focus:outline-none focus:ring-2 focus:ring-primary-pink/20 focus:border-primary-pink/50 transition-all shadow-sm"
                 placeholder="Your location"
               />
             </div>

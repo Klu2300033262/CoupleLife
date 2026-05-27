@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+﻿import React, { useState } from 'react';
 import { motion } from 'framer-motion';
 import { Copy, Check, Share2 } from 'lucide-react';
 
@@ -42,10 +42,10 @@ export default function CoupleCodeCard({ inviteCode }) {
       <div className="flex justify-center gap-4">
         <button
           onClick={handleCopy}
-          className="flex flex-1 items-center justify-center gap-2 bg-primary text-white py-3 rounded-lg font-medium hover:bg-primary-light transition-colors"
+          className="flex flex-1 items-center justify-center gap-2 `bg-primary-pink text-white py-3 rounded-lg font-medium hover:`bg-primary-pink-light transition-colors"
         >
           {copied ? <Check size={18} /> : <Copy size={18} />}
-          {copied ? 'Copied! 💖' : 'Copy Code'}
+          {copied ? 'Copied! ðŸ’–' : 'Copy Code'}
         </button>
         <button
           onClick={handleShare}
@@ -57,3 +57,4 @@ export default function CoupleCodeCard({ inviteCode }) {
     </motion.div>
   );
 }
+

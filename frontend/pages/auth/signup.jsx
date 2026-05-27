@@ -86,7 +86,7 @@ export default function Signup() {
           <label className="block text-sm font-medium text-dark mb-1">Full Name</label>
           <input 
             type="text" name="name" required value={formData.name} onChange={handleChange}
-            className="w-full px-4 py-3 rounded-lg border border-gray-200 focus:outline-none focus:ring-2 focus:ring-primary-light"
+            className="w-full px-4 py-3 rounded-lg border border-gray-200 focus:outline-none focus:ring-2 focus:ring-primary-pink-light"
             placeholder="John Doe"
           />
         </div>
@@ -95,7 +95,7 @@ export default function Signup() {
           <label className="block text-sm font-medium text-dark mb-1">Email</label>
           <input 
             type="email" name="email" required value={formData.email} onChange={handleChange}
-            className="w-full px-4 py-3 rounded-lg border border-gray-200 focus:outline-none focus:ring-2 focus:ring-primary-light"
+            className="w-full px-4 py-3 rounded-lg border border-gray-200 focus:outline-none focus:ring-2 focus:ring-primary-pink-light"
             placeholder="john@example.com"
           />
         </div>
@@ -125,12 +125,12 @@ export default function Signup() {
 
       <p className="text-center mt-6 text-sm text-gray-500">
         Already have an account?{' '}
-        <button onClick={() => router.push('/auth/login')} className="text-primary font-semibold hover:underline">Log In</button>
+        <button onClick={() => router.push('/auth/login')} className="text-primary-pink font-semibold hover:underline">Log In</button>
       </p>
 
       <p className="text-center mt-4 text-sm text-gray-400">
         Return to{' '}
-        <button onClick={() => router.push('/')} className="text-primary font-semibold hover:underline">Home</button>
+        <button onClick={() => router.push('/')} className="text-primary-pink font-semibold hover:underline">Home</button>
       </p>
     </AuthCard>
   );

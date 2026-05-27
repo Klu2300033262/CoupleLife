@@ -2,7 +2,7 @@ const User = require('../models/User');
 
 exports.getProfile = async (req, res) => {
   try {
-    const user = await User.findOne({ firebase_uid: req.user.uid }).populate('partner_id');
+    const user = await User.findOne({ firebase_uid: req.user.firebase_uid || req.user.uid }).populate('partner_id');
     if (!user) return res.status(404).json({ error: 'User not found' });
     res.status(200).json(user);
   } catch (error) {
@@ -13,7 +13,7 @@ exports.getProfile = async (req, res) => {
 exports.updateProfile = async (req, res) => {
   try {
     const { username, bio, gender, pronouns, timezone, relationship_status, relationship_story, avatar, anniversary_date } = req.body;
-    const user = await User.findOne({ firebase_uid: req.user.uid });
+    const user = await User.findOne({ firebase_uid: req.user.firebase_uid || req.user.uid });
     if (!user) return res.status(404).json({ error: 'User not found' });
 
     if (username !== undefined) user.username = username;
@@ -44,7 +44,7 @@ exports.updateProfile = async (req, res) => {
 exports.updateSettings = async (req, res) => {
   try {
     const { visibility_settings, notification_preferences, theme_preference } = req.body;
-    const user = await User.findOne({ firebase_uid: req.user.uid });
+    const user = await User.findOne({ firebase_uid: req.user.firebase_uid || req.user.uid });
     if (!user) return res.status(404).json({ error: 'User not found' });
 
     if (visibility_settings) user.visibility_settings = { ...user.visibility_settings, ...visibility_settings };
@@ -60,7 +60,7 @@ exports.updateSettings = async (req, res) => {
 
 exports.getCompatibility = async (req, res) => {
   try {
-    const user = await User.findOne({ firebase_uid: req.user.uid });
+    const user = await User.findOne({ firebase_uid: req.user.firebase_uid || req.user.uid });
     if (!user || !user.partner_id) return res.status(400).json({ error: 'No partner linked' });
 
     user.compatibility_score = Math.floor(Math.random() * (100 - 80 + 1) + 80);

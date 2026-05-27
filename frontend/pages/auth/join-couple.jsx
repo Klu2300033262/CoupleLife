@@ -64,7 +64,7 @@ export default function JoinCouple() {
           <label className="block text-sm font-medium text-dark mb-1">Couple Key</label>
           <input 
             type="text" name="coupleKey" required value={formData.coupleKey} onChange={handleChange}
-            className="w-full px-4 py-3 rounded-lg border border-gray-200 focus:outline-none focus:ring-2 focus:ring-primary-light uppercase font-bold tracking-widest text-center"
+            className="w-full px-4 py-3 rounded-lg border border-gray-200 focus:outline-none focus:ring-2 focus:ring-primary-pink-light uppercase font-bold tracking-widest text-center"
             placeholder="CL-XXXX-XXXX"
           />
         </div>
@@ -73,7 +73,7 @@ export default function JoinCouple() {
           <label className="block text-sm font-medium text-dark mb-1">Full Name</label>
           <input 
             type="text" name="name" required value={formData.name} onChange={handleChange}
-            className="w-full px-4 py-3 rounded-lg border border-gray-200 focus:outline-none focus:ring-2 focus:ring-primary-light"
+            className="w-full px-4 py-3 rounded-lg border border-gray-200 focus:outline-none focus:ring-2 focus:ring-primary-pink-light"
             placeholder="Jane Doe"
           />
         </div>
@@ -82,7 +82,7 @@ export default function JoinCouple() {
           <label className="block text-sm font-medium text-dark mb-1">Email</label>
           <input 
             type="email" name="email" required value={formData.email} onChange={handleChange}
-            className="w-full px-4 py-3 rounded-lg border border-gray-200 focus:outline-none focus:ring-2 focus:ring-primary-light"
+            className="w-full px-4 py-3 rounded-lg border border-gray-200 focus:outline-none focus:ring-2 focus:ring-primary-pink-light"
             placeholder="jane@example.com"
           />
         </div>
@@ -103,15 +103,15 @@ export default function JoinCouple() {
         </LoadingButton>
       </form>
 
-      <div className="mt-6 p-4 bg-primary/5 rounded-lg border border-primary/10">
+      <div className="mt-6 p-4 bg-primary-pink/5 rounded-lg border border-primary-pink/10">
         <p className="text-xs text-gray-500 text-center">
-          <span className="font-semibold text-primary">Security Note:</span> Google Sign-In is disabled for partner linking. Please use email/password signup to verify direct account ownership.
+          <span className="font-semibold text-primary-pink">Security Note:</span> Google Sign-In is disabled for partner linking. Please use email/password signup to verify direct account ownership.
         </p>
       </div>
 
       <p className="text-center mt-6 text-sm text-gray-500">
         Back to{' '}
-        <button onClick={() => router.push('/')} className="text-primary font-semibold hover:underline">Home</button>
+        <button onClick={() => router.push('/')} className="text-primary-pink font-semibold hover:underline">Home</button>
       </p>
     </AuthCard>
   );

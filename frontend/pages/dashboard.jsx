@@ -88,7 +88,7 @@ export default function Dashboard() {
           {backendUser.couple_id ? (
             <>
               <p className="text-sm text-gray-500 mb-4">Share this Couple Key with your partner so they can join you!</p>
-              <div className="bg-gray-50 rounded-xl p-4 font-mono font-bold text-lg tracking-widest text-primary border border-gray-100 mb-4">
+              <div className="bg-gray-50 rounded-xl p-4 font-mono font-bold text-lg tracking-widest text-primary-pink border border-gray-100 mb-4">
                 {backendUser.couple_id.couple_key}
               </div>
               <button 
@@ -96,7 +96,7 @@ export default function Dashboard() {
                   navigator.clipboard.writeText(backendUser.couple_id.couple_key);
                   alert('Copied to clipboard!');
                 }}
-                className="w-full bg-primary/10 text-primary font-bold py-3 rounded-xl hover:bg-primary/20 transition-colors"
+                className="w-full bg-primary-pink/10 text-primary-pink font-bold py-3 rounded-xl hover:bg-primary-pink/20 transition-colors"
               >
                 Copy Key
               </button>
@@ -115,14 +115,14 @@ export default function Dashboard() {
                     console.error(err);
                   }
                 }}
-                className="w-full bg-primary text-white font-bold py-3 rounded-xl hover:bg-primary/50 transition-colors"
+                className="w-full bg-primary-pink text-white font-bold py-3 rounded-xl hover:bg-primary-pink/50 transition-colors"
               >
                 Generate Key
               </button>
             </>
           )}
         </div>
-        <button onClick={() => router.push('/profile')} className="mt-2 text-primary font-semibold hover:underline">
+        <button onClick={() => router.push('/profile')} className="mt-2 text-primary-pink font-semibold hover:underline">
           Go to Profile
         </button>
       </div>
@@ -133,12 +133,12 @@ export default function Dashboard() {
     <div className="min-h-screen bg-background flex flex-col">
       <header className="px-6 pt-10 pb-4 flex justify-between items-center bg-white/50 backdrop-blur-sm sticky top-0 z-10">
         <div className="flex items-center space-x-2 text-xl font-bold text-dark">
-          <span className="text-primary text-2xl">💕</span>
+          <span className="text-primary-pink text-2xl">💕</span>
           <span>CoupleLife</span>
         </div>
         <button 
           onClick={() => router.push('/profile')} 
-          className="w-10 h-10 rounded-full bg-white shadow-sm flex items-center justify-center text-gray-500 hover:text-primary transition-colors overflow-hidden border border-gray-100"
+          className="w-10 h-10 rounded-full bg-white shadow-sm flex items-center justify-center text-gray-500 hover:text-primary-pink transition-colors overflow-hidden border border-gray-100"
         >
           {backendUser.avatar ? <img src={backendUser.avatar} className="w-full h-full object-cover" alt="Profile" /> : <User size={20} />}
         </button>

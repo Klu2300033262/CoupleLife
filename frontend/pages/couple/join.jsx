@@ -50,7 +50,7 @@ export default function JoinPartner() {
         animate={{ scale: 1, opacity: 1 }}
         className="w-full max-w-md bg-white rounded-2xl shadow-romantic p-8 border border-borderPink relative"
       >
-        <div className="absolute -top-6 left-1/2 -translate-x-1/2 w-12 h-12 bg-primary text-white rounded-full flex items-center justify-center shadow-lg">
+        <div className="absolute -top-6 left-1/2 -translate-x-1/2 w-12 h-12 bg-primary-pink text-white rounded-full flex items-center justify-center shadow-lg">
           <Heart size={24} fill="currentColor" />
         </div>
 
@@ -63,11 +63,11 @@ export default function JoinPartner() {
 
         <form onSubmit={handleJoin} className="space-y-4">
           <div className="relative">
-            <KeyRound className="absolute left-3 top-3 text-primary" size={20} />
+            <KeyRound className="absolute left-3 top-3 text-primary-pink" size={20} />
             <input 
               type="text" required placeholder="Invite Code (e.g. CL-XXXX-XXXX)" 
               value={formData.inviteCode} onChange={(e) => setFormData({...formData, inviteCode: e.target.value.toUpperCase()})}
-              className="w-full pl-10 pr-4 py-3 rounded-lg border border-gray-200 focus:border-primary focus:ring-1 focus:ring-primary outline-none uppercase font-medium tracking-wide"
+              className="w-full pl-10 pr-4 py-3 rounded-lg border border-gray-200 focus:border-primary-pink focus:ring-1 focus:ring-primary-pink outline-none uppercase font-medium tracking-wide"
             />
           </div>
           <div className="relative">
@@ -75,7 +75,7 @@ export default function JoinPartner() {
             <input 
               type="email" required placeholder="Email Address" 
               value={formData.email} onChange={(e) => setFormData({...formData, email: e.target.value})}
-              className="w-full pl-10 pr-4 py-3 rounded-lg border border-gray-200 focus:border-primary focus:ring-1 focus:ring-primary outline-none"
+              className="w-full pl-10 pr-4 py-3 rounded-lg border border-gray-200 focus:border-primary-pink focus:ring-1 focus:ring-primary-pink outline-none"
             />
           </div>
           <div className="relative">
@@ -83,7 +83,7 @@ export default function JoinPartner() {
             <input 
               type="password" required placeholder="Password" 
               value={formData.password} onChange={(e) => setFormData({...formData, password: e.target.value})}
-              className="w-full pl-10 pr-4 py-3 rounded-lg border border-gray-200 focus:border-primary focus:ring-1 focus:ring-primary outline-none"
+              className="w-full pl-10 pr-4 py-3 rounded-lg border border-gray-200 focus:border-primary-pink focus:ring-1 focus:ring-primary-pink outline-none"
             />
           </div>
           <div className="relative">
@@ -91,13 +91,13 @@ export default function JoinPartner() {
             <input 
               type="password" required placeholder="Confirm Password" 
               value={formData.confirm} onChange={(e) => setFormData({...formData, confirm: e.target.value})}
-              className="w-full pl-10 pr-4 py-3 rounded-lg border border-gray-200 focus:border-primary focus:ring-1 focus:ring-primary outline-none"
+              className="w-full pl-10 pr-4 py-3 rounded-lg border border-gray-200 focus:border-primary-pink focus:ring-1 focus:ring-primary-pink outline-none"
             />
           </div>
 
           <button 
             type="submit" disabled={loading}
-            className="w-full bg-primary text-white py-3 rounded-lg font-medium hover:bg-primary-light transition-colors mt-2 disabled:opacity-70"
+            className="w-full bg-primary-pink text-white py-3 rounded-lg font-medium hover:bg-primary-pink-light transition-colors mt-2 disabled:opacity-70"
           >
             {loading ? 'Connecting...' : 'Connect Now 💖'}
           </button>

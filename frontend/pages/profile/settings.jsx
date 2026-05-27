@@ -76,7 +76,7 @@ export default function Settings() {
         <button 
           onClick={handleSave}
           disabled={isSaving}
-          className="w-full bg-primary text-white py-3.5 rounded-xl font-bold shadow-md shadow-primary/30"
+          className="w-full bg-primary-pink text-white py-3.5 rounded-xl font-bold shadow-md shadow-primary-pink/30"
         >
           {isSaving ? 'Saving...' : 'Save Preferences'}
         </button>

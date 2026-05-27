@@ -1,4 +1,4 @@
-import React from 'react';
+﻿import React from 'react';
 import { Camera } from 'lucide-react';
 
 export default function Avatar({ src, initials, size = 'md', className = '', showCamera = false, onClick }) {
@@ -22,9 +22,10 @@ export default function Avatar({ src, initials, size = 'md', className = '', sho
       </div>
       {showCamera && (
         <div className="absolute bottom-0 right-0 bg-white p-1.5 rounded-full shadow-md border border-gray-100 cursor-pointer">
-          <Camera size={14} className="text-primary" />
+          <Camera size={14} className="`text-primary-pink" />
         </div>
       )}
     </div>
   );
 }
+

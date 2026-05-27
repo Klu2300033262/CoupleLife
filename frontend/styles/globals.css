@@ -15,6 +15,10 @@
   }
 
   .primary-button {
-    @apply w-full bg-gradient-to-br from-primary to-primary-light text-white rounded-lg py-3.5 font-semibold transition-transform hover:scale-[1.02] active:scale-95;
+    @apply w-full bg-gradient-to-br from-primary-pink to-soft-pink text-white rounded-lg py-3.5 font-semibold transition-transform hover:scale-[1.02] active:scale-95;
+  }
+
+  .text-dark {
+    @apply text-[#1f2937];
   }
 }

@@ -1,4 +1,4 @@
-import React, { useState, useCallback } from 'react';
+﻿import React, { useState, useCallback } from 'react';
 import Cropper from 'react-easy-crop';
 import { X, Check } from 'lucide-react';
 
@@ -55,7 +55,7 @@ export default function ImageCropModal({ imageSrc, onClose, onCropComplete }) {
       <div className="flex justify-between items-center p-4 text-white">
         <button onClick={onClose} className="p-2"><X size={24} /></button>
         <h2 className="font-semibold">Crop Image</h2>
-        <button onClick={handleSave} className="p-2 text-primary font-bold"><Check size={24} /></button>
+        <button onClick={handleSave} className="p-2 `text-primary-pink font-bold"><Check size={24} /></button>
       </div>
       
       <div className="flex-1 relative w-full">
@@ -87,3 +87,4 @@ export default function ImageCropModal({ imageSrc, onClose, onCropComplete }) {
     </div>
   );
 }
+

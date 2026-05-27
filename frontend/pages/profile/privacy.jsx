@@ -49,7 +49,7 @@ export default function PrivacySettings() {
         <button 
           onClick={handleSave}
           disabled={isSaving}
-          className="w-full bg-primary text-white py-3.5 rounded-xl font-bold shadow-md shadow-primary/30"
+          className="w-full bg-primary-pink text-white py-3.5 rounded-xl font-bold shadow-md shadow-primary-pink/30"
         >
           {isSaving ? 'Saving...' : 'Save Settings'}
         </button>
@@ -68,7 +68,7 @@ function SelectOption({ label, value, options, onChange }) {
             key={opt}
             onClick={() => onChange(opt)}
             className={`flex-1 py-1.5 text-xs font-semibold rounded-lg transition-colors ${
-              value === opt ? 'bg-white text-primary shadow-sm' : 'text-gray-500'
+              value === opt ? 'bg-white text-primary-pink shadow-sm' : 'text-gray-500'
             }`}
           >
             {opt}

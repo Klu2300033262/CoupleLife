@@ -139,7 +139,7 @@ export default function Security() {
               required
               value={newEmail}
               onChange={(e) => setNewEmail(e.target.value)}
-              className="w-full border border-gray-200 rounded-xl px-4 py-3 text-sm focus:outline-none focus:ring-2 focus:ring-primary/20 focus:border-primary/50"
+              className="w-full border border-gray-200 rounded-xl px-4 py-3 text-sm focus:outline-none focus:ring-2 focus:ring-primary-pink/20 focus:border-primary-pink/50"
             />
             <input 
               type="password" 
@@ -147,12 +147,12 @@ export default function Security() {
               required
               value={emailPassword}
               onChange={(e) => setEmailPassword(e.target.value)}
-              className="w-full border border-gray-200 rounded-xl px-4 py-3 text-sm focus:outline-none focus:ring-2 focus:ring-primary/20 focus:border-primary/50"
+              className="w-full border border-gray-200 rounded-xl px-4 py-3 text-sm focus:outline-none focus:ring-2 focus:ring-primary-pink/20 focus:border-primary-pink/50"
             />
             <button 
               type="submit"
               disabled={isChangingEmail}
-              className="w-full bg-primary text-white font-medium py-3 rounded-xl disabled:opacity-50"
+              className="w-full bg-primary-pink text-white font-medium py-3 rounded-xl disabled:opacity-50"
             >
               {isChangingEmail ? 'Processing...' : 'Change Email'}
             </button>
@@ -165,7 +165,7 @@ export default function Security() {
             <button 
               type="button"
               onClick={handlePasswordResetEmail}
-              className="text-xs text-primary font-semibold"
+              className="text-xs text-primary-pink font-semibold"
             >
               Reset via Email
             </button>
@@ -178,7 +178,7 @@ export default function Security() {
               required
               value={oldPassword}
               onChange={(e) => setOldPassword(e.target.value)}
-              className="w-full border border-gray-200 rounded-xl px-4 py-3 text-sm focus:outline-none focus:ring-2 focus:ring-primary/20 focus:border-primary/50"
+              className="w-full border border-gray-200 rounded-xl px-4 py-3 text-sm focus:outline-none focus:ring-2 focus:ring-primary-pink/20 focus:border-primary-pink/50"
             />
             <input 
               type="password" 
@@ -186,7 +186,7 @@ export default function Security() {
               required
               value={newPassword}
               onChange={(e) => setNewPassword(e.target.value)}
-              className="w-full border border-gray-200 rounded-xl px-4 py-3 text-sm focus:outline-none focus:ring-2 focus:ring-primary/20 focus:border-primary/50"
+              className="w-full border border-gray-200 rounded-xl px-4 py-3 text-sm focus:outline-none focus:ring-2 focus:ring-primary-pink/20 focus:border-primary-pink/50"
             />
             <input 
               type="password" 
@@ -194,12 +194,12 @@ export default function Security() {
               required
               value={confirmPassword}
               onChange={(e) => setConfirmPassword(e.target.value)}
-              className="w-full border border-gray-200 rounded-xl px-4 py-3 text-sm focus:outline-none focus:ring-2 focus:ring-primary/20 focus:border-primary/50"
+              className="w-full border border-gray-200 rounded-xl px-4 py-3 text-sm focus:outline-none focus:ring-2 focus:ring-primary-pink/20 focus:border-primary-pink/50"
             />
             <button 
               type="submit"
               disabled={isChangingPassword}
-              className="w-full bg-primary text-white font-medium py-3 rounded-xl disabled:opacity-50"
+              className="w-full bg-primary-pink text-white font-medium py-3 rounded-xl disabled:opacity-50"
             >
               {isChangingPassword ? 'Updating...' : 'Update Password'}
             </button>

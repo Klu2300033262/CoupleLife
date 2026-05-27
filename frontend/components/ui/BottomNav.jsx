@@ -1,4 +1,4 @@
-import React from 'react';
+﻿import React from 'react';
 import { useRouter } from 'next/router';
 import { Home, BookHeart, MessageCircle, Target, Wallet, Plane } from 'lucide-react';
 
@@ -27,10 +27,10 @@ export default function BottomNav() {
               key={item.name}
               onClick={() => router.push(item.path)}
               className={`flex flex-col items-center justify-center w-16 p-1 rounded-xl transition-all ${
-                isActive ? 'text-primary' : 'text-gray-400 hover:text-primary/70'
+                isActive ? '`text-primary-pink' : 'text-gray-400 hover:`text-primary-pink/70'
               }`}
             >
-              <div className={`p-1.5 rounded-full ${isActive ? 'bg-primary/10' : ''}`}>
+              <div className={`p-1.5 rounded-full ${isActive ? '`bg-primary-pink/10' : ''}`}>
                 <Icon size={20} strokeWidth={isActive ? 2.5 : 2} />
               </div>
               <span className={`text-[10px] mt-1 font-medium ${isActive ? 'font-bold' : ''}`}>
@@ -43,3 +43,4 @@ export default function BottomNav() {
     </div>
   );
 }
+

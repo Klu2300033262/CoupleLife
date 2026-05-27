@@ -109,7 +109,7 @@ export default function EditProfile() {
             </div>
             <div>
               <label className="block text-xs font-semibold text-gray-500 mb-1">Bio</label>
-              <textarea name="bio" value={formData.bio} onChange={handleChange} rows="3" className="w-full border border-gray-200 rounded-xl p-3 text-sm focus:outline-none focus:ring-2 focus:ring-primary/20 focus:border-primary/50" />
+              <textarea name="bio" value={formData.bio} onChange={handleChange} rows="3" className="w-full border border-gray-200 rounded-xl p-3 text-sm focus:outline-none focus:ring-2 focus:ring-primary-pink/20 focus:border-primary-pink/50" />
             </div>
             <div className="flex space-x-4">
               <div className="flex-1">
@@ -129,7 +129,7 @@ export default function EditProfile() {
             <Input type="date" label="Anniversary Date" name="anniversary_date" value={formData.anniversary_date} onChange={handleChange} />
             <div>
               <label className="block text-xs font-semibold text-gray-500 mb-1">Relationship Story</label>
-              <textarea name="relationship_story" value={formData.relationship_story} onChange={handleChange} rows="3" className="w-full border border-gray-200 rounded-xl p-3 text-sm focus:outline-none focus:ring-2 focus:ring-primary/20 focus:border-primary/50" />
+              <textarea name="relationship_story" value={formData.relationship_story} onChange={handleChange} rows="3" className="w-full border border-gray-200 rounded-xl p-3 text-sm focus:outline-none focus:ring-2 focus:ring-primary-pink/20 focus:border-primary-pink/50" />
             </div>
           </div>
         </section>
@@ -138,7 +138,7 @@ export default function EditProfile() {
           <button 
             onClick={handleSave}
             disabled={isSaving}
-            className="w-full bg-primary text-white py-3.5 rounded-xl font-bold shadow-md shadow-primary/30 disabled:opacity-50"
+            className="w-full bg-primary-pink text-white py-3.5 rounded-xl font-bold shadow-md shadow-primary-pink/30 disabled:opacity-50"
           >
             {isSaving ? 'Saving...' : 'Save Profile'}
           </button>
@@ -152,7 +152,7 @@ function Input({ label, ...props }) {
   return (
     <div>
       <label className="block text-xs font-semibold text-gray-500 mb-1">{label}</label>
-      <input {...props} className="w-full border border-gray-200 rounded-xl px-4 py-3 text-sm focus:outline-none focus:ring-2 focus:ring-primary/20 focus:border-primary/50" />
+      <input {...props} className="w-full border border-gray-200 rounded-xl px-4 py-3 text-sm focus:outline-none focus:ring-2 focus:ring-primary-pink/20 focus:border-primary-pink/50" />
     </div>
   );
 }

@@ -1,4 +1,4 @@
-import React from 'react';
+﻿import React from 'react';
 import { Sun, Moon, Monitor } from 'lucide-react';
 
 export default function ThemeSwitcher({ currentTheme, onChange }) {
@@ -18,7 +18,7 @@ export default function ThemeSwitcher({ currentTheme, onChange }) {
             key={opt.id}
             onClick={() => onChange(opt.id)}
             className={`flex-1 flex items-center justify-center space-x-2 py-2 text-sm font-medium rounded-lg transition-colors ${
-              isActive ? 'bg-white text-primary shadow-sm' : 'text-gray-500 hover:text-dark'
+              isActive ? 'bg-white `text-primary-pink shadow-sm' : 'text-gray-500 hover:text-dark'
             }`}
           >
             <Icon size={16} />
@@ -29,3 +29,4 @@ export default function ThemeSwitcher({ currentTheme, onChange }) {
     </div>
   );
 }
+

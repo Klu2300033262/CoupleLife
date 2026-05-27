@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+﻿import React, { useState } from 'react';
 import { Eye, EyeOff } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
 
@@ -31,13 +31,13 @@ const PasswordInput = ({ value, onChange, label = 'Password', showValidation = f
           type={showPassword ? 'text' : 'password'}
           value={value}
           onChange={onChange}
-          className="w-full px-4 py-3 rounded-lg border border-gray-200 focus:outline-none focus:ring-2 focus:ring-primary-light transition-colors"
+          className="w-full px-4 py-3 rounded-lg border border-gray-200 focus:outline-none focus:ring-2 focus:`ring-primary-pink-light transition-colors"
           placeholder={`Enter your ${label.toLowerCase()}`}
         />
         <button
           type="button"
           onClick={() => setShowPassword(!showPassword)}
-          className="absolute right-3 top-3.5 text-gray-400 hover:text-primary transition-colors"
+          className="absolute right-3 top-3.5 text-gray-400 hover:`text-primary-pink transition-colors"
         >
           {showPassword ? <EyeOff size={20} /> : <Eye size={20} />}
         </button>
@@ -71,9 +71,10 @@ const PasswordInput = ({ value, onChange, label = 'Password', showValidation = f
 
 const ValidationItem = ({ isValid, text }) => (
   <div className={`flex items-center space-x-2 transition-colors ${isValid ? 'text-green-500' : 'text-gray-light'}`}>
-    <span className="font-bold">{isValid ? '✓' : '✗'}</span>
+    <span className="font-bold">{isValid ? 'âœ“' : 'âœ—'}</span>
     <span>{text}</span>
   </div>
 );
 
 export default PasswordInput;
+

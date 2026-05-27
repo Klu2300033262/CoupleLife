@@ -39,11 +39,11 @@ export default function GenerateCode() {
           Share this unique code with your partner to link your accounts forever.
         </p>
         {loading ? (
-          <div className="text-center text-primary animate-pulse py-10">Generating magic code... ✨</div>
+          <div className="text-center text-primary-pink animate-pulse py-10">Generating magic code... ✨</div>
         ) : error ? (
           <div className="text-center text-red-500 mb-4 bg-red-50 p-4 rounded-xl border border-red-200">
             {error}
-            <button onClick={fetchCode} className="block w-full mt-4 bg-primary text-white py-2 rounded-lg">
+            <button onClick={fetchCode} className="block w-full mt-4 bg-primary-pink text-white py-2 rounded-lg">
               Try Again
             </button>
           </div>
@@ -52,7 +52,7 @@ export default function GenerateCode() {
             <CoupleCodeCard inviteCode={inviteData.invite_code} />
             <ExpiryTimer expiresAt={inviteData.code_expires_at} onExpired={() => {}} />
             {new Date(inviteData.code_expires_at) < new Date() && (
-              <button onClick={fetchCode} className="w-full mt-6 bg-white border border-borderPink text-primary font-medium py-3 rounded-lg hover:bg-pink-50 transition-colors">
+              <button onClick={fetchCode} className="w-full mt-6 bg-white border border-borderPink text-primary-pink font-medium py-3 rounded-lg hover:bg-pink-50 transition-colors">
                 Generate New Code
               </button>
             )}

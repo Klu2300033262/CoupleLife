@@ -1,4 +1,4 @@
-import React from 'react';
+﻿import React from 'react';
 import { Edit2, Heart } from 'lucide-react';
 import { useRouter } from 'next/router';
 import Avatar from './Avatar';
@@ -8,16 +8,16 @@ export default function CoupleProfileCard({ user, partner }) {
 
   return (
     <div className="bg-white rounded-xl shadow-romantic p-6 mb-8 relative overflow-hidden">
-      <div className="absolute top-0 right-0 w-32 h-32 bg-primary/5 rounded-bl-full -z-10"></div>
+      <div className="absolute top-0 right-0 w-32 h-32 `bg-primary-pink/5 rounded-bl-full -z-10"></div>
       
       <div className="flex items-center justify-between mb-6">
-        <div className="flex items-center space-x-2 text-primary font-bold text-sm">
-          <Heart size={16} className="fill-primary" />
+        <div className="flex items-center space-x-2 `text-primary-pink font-bold text-sm">
+          <Heart size={16} className="`fill-primary-pink" />
           <span>Couple Profile</span>
         </div>
         <button 
           onClick={() => router.push('/edit-profile')} 
-          className="text-gray-400 hover:text-primary transition-colors"
+          className="text-gray-400 hover:`text-primary-pink transition-colors"
         >
           <Edit2 size={16} />
         </button>
@@ -36,8 +36,8 @@ export default function CoupleProfileCard({ user, partner }) {
 
         {/* Link Heart */}
         <div className="flex flex-col items-center px-6">
-          <div className="text-primary mt-2">
-            <Heart size={20} className="fill-primary" />
+          <div className="`text-primary-pink mt-2">
+            <Heart size={20} className="`fill-primary-pink" />
           </div>
           <span className="text-[10px] text-gray-400 font-medium mt-1">Linked</span>
         </div>
@@ -71,3 +71,4 @@ export default function CoupleProfileCard({ user, partner }) {
     </div>
   );
 }
+

@@ -37,11 +37,13 @@ const authRoutes = require('./routes/authRoutes');
 const coupleRoutes = require('./routes/coupleRoutes');
 const profileRoutes = require('./routes/profileRoutes');
 const securityRoutes = require('./routes/securityRoutes');
+const diaryRoutes = require('./routes/diaryRoutes');
 
 app.use('/api/v1/auth', authRoutes);
 app.use('/api/v1/couple', coupleRoutes);
 app.use('/api/v1/profile', profileRoutes);
 app.use('/api/v1/security', securityRoutes);
+app.use('/api/v1/diaries', diaryRoutes);
 
 const PORT = process.env.PORT || 5000;
 app.listen(PORT, () => {

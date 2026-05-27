@@ -52,7 +52,7 @@ export default function Login() {
           <label className="block text-sm font-medium text-dark mb-1">Email</label>
           <input 
             type="email" name="email" required value={formData.email} onChange={handleChange}
-            className="w-full px-4 py-3 rounded-lg border border-gray-200 focus:outline-none focus:ring-2 focus:ring-primary-light"
+            className="w-full px-4 py-3 rounded-lg border border-gray-200 focus:outline-none focus:ring-2 focus:ring-primary-pink-light"
             placeholder="john@example.com"
           />
         </div>
@@ -66,7 +66,7 @@ export default function Login() {
           <button 
             type="button" 
             onClick={() => router.push('/auth/forgot-password')} 
-            className="text-sm font-medium text-primary hover:underline"
+            className="text-sm font-medium text-primary-pink hover:underline"
           >
             Forgot Password?
           </button>
@@ -86,12 +86,12 @@ export default function Login() {
 
       <p className="text-center mt-6 text-sm text-gray-500">
         Don't have an account?{' '}
-        <button onClick={() => router.push('/auth/signup')} className="text-primary font-semibold hover:underline">Sign Up</button>
+        <button onClick={() => router.push('/auth/signup')} className="text-primary-pink font-semibold hover:underline">Sign Up</button>
       </p>
 
       <p className="text-center mt-4 text-sm text-gray-400">
         Return to{' '}
-        <button onClick={() => router.push('/')} className="text-primary font-semibold hover:underline">Home</button>
+        <button onClick={() => router.push('/')} className="text-primary-pink font-semibold hover:underline">Home</button>
       </p>
     </AuthCard>
   );

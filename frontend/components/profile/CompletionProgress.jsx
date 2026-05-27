@@ -1,4 +1,4 @@
-import React from 'react';
+﻿import React from 'react';
 import { motion } from 'framer-motion';
 import { useRouter } from 'next/router';
 
@@ -19,7 +19,7 @@ export default function CompletionProgress({ percentage }) {
             transition={{ duration: 1.5, delay: 0.2, type: 'spring' }}
             cx="40" cy="40" r={radius} stroke="currentColor" strokeWidth="8" fill="transparent"
             strokeDasharray={circumference}
-            className="text-primary"
+            className="`text-primary-pink"
             strokeLinecap="round"
           />
         </svg>
@@ -30,7 +30,7 @@ export default function CompletionProgress({ percentage }) {
         <p className="text-xs text-gray-500 mb-3">Complete your profile to unlock more features!</p>
         <button 
           onClick={() => router.push('/profile/edit')}
-          className="text-xs font-semibold text-primary bg-primary/10 px-4 py-1.5 rounded-full hover:bg-primary/20 transition-colors"
+          className="text-xs font-semibold `text-primary-pink `bg-primary-pink/10 px-4 py-1.5 rounded-full hover:`bg-primary-pink/20 transition-colors"
         >
           Complete Now
         </button>
@@ -38,3 +38,4 @@ export default function CompletionProgress({ percentage }) {
     </div>
   );
 }
+

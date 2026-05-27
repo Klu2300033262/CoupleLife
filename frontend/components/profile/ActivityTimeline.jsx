@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+﻿import React, { useEffect, useState } from 'react';
 import { format } from 'date-fns';
 import { getAuditLogs } from '../../services/securityService';
 import { auth } from '../../services/firebase';
@@ -26,7 +26,7 @@ export default function ActivityTimeline() {
       {logs.length === 0 && <p className="text-gray-500 text-sm text-center py-4">No recent activity.</p>}
       {logs.map((log) => (
         <div key={log._id} className="flex space-x-3 items-start">
-          <div className="w-8 h-8 rounded-full bg-pink-50 text-primary flex items-center justify-center shrink-0 mt-1">
+          <div className="w-8 h-8 rounded-full bg-pink-50 `text-primary-pink flex items-center justify-center shrink-0 mt-1">
             <Clock size={14} />
           </div>
           <div className="flex-1 bg-white p-3 rounded-xl border border-gray-100 shadow-sm">
@@ -38,3 +38,4 @@ export default function ActivityTimeline() {
     </div>
   );
 }
+

@@ -34,8 +34,17 @@ export default function MoodTracker({ currentUser, partner }) {
 
   const renderSavedMood = (userObj, isCurrentUser) => {
     if (!userObj?.current_mood) return null;
-    const { mood, note } = userObj.current_mood;
+    const { mood, note, updated_at } = userObj.current_mood;
     if (!mood && !note) return null;
+    
+    // Remove note when day is over
+    if (updated_at) {
+      const updatedDate = new Date(updated_at);
+      const today = new Date();
+      if (updatedDate.toDateString() !== today.toDateString()) {
+        return null;
+      }
+    }
     
     const moodObj = mood ? MOODS.find(m => m.id === mood) : null;
     
@@ -47,7 +56,7 @@ export default function MoodTracker({ currentUser, partner }) {
               <div className="text-3xl">{moodObj.emoji}</div>
               <div>
                 <h3 className="text-dark font-medium text-base">
-                  {userObj.name} is feeling <span className="text-primary font-bold">{moodObj.label}</span>
+                  {userObj.name} is feeling <span className="text-primary-pink font-bold">{moodObj.label}</span>
                 </h3>
                 <p className="text-gray-500 text-xs">Updated recently</p>
               </div>
@@ -69,7 +78,7 @@ export default function MoodTracker({ currentUser, partner }) {
         {isCurrentUser && (
           <button 
             onClick={async () => await updateUserMood({ mood: null, note: null })}
-            className="w-full mt-3 bg-white text-primary border border-primary/20 rounded-xl py-2 font-semibold text-xs flex items-center justify-center hover:bg-pink-50 transition-colors"
+            className="w-full mt-3 bg-white text-primary-pink border border-primary-pink/20 rounded-xl py-2 font-semibold text-xs flex items-center justify-center hover:bg-pink-50 transition-colors"
           >
             <MessageCircle size={14} className="mr-1" />
             Clear Mood
@@ -85,7 +94,7 @@ export default function MoodTracker({ currentUser, partner }) {
       {renderSavedMood(currentUser, true)}
 
       <div className="flex items-center space-x-2 text-dark font-bold mb-6">
-        <Smile className="text-primary" size={20} />
+        <Smile className="text-primary-pink" size={20} />
         <h2>How are you feeling?</h2>
       </div>
 
@@ -95,7 +104,7 @@ export default function MoodTracker({ currentUser, partner }) {
             key={mood.id}
             onClick={() => setSelectedMood(mood.id)}
             className={`flex flex-col items-center justify-center py-2 rounded-xl transition-colors ${
-              selectedMood === mood.id ? 'bg-pink-50 ring-2 ring-primary/20' : 'hover:bg-gray-50'
+              selectedMood === mood.id ? 'bg-pink-50 ring-2 ring-primary-pink/20' : 'hover:bg-gray-50'
             }`}
           >
             <span className="text-3xl mb-2">{mood.emoji}</span>
@@ -109,7 +118,7 @@ export default function MoodTracker({ currentUser, partner }) {
           value={note}
           onChange={(e) => setNote(e.target.value)}
           placeholder="Leave a note for today..."
-          className="w-full bg-white border border-gray-200 rounded-xl p-4 text-sm focus:outline-none focus:ring-2 focus:ring-primary/20 focus:border-primary/50 resize-none min-h-[100px] mb-4 shadow-sm"
+          className="w-full bg-white border border-gray-200 rounded-xl p-4 text-sm focus:outline-none focus:ring-2 focus:ring-primary-pink/20 focus:border-primary-pink/50 resize-none min-h-[100px] mb-4 shadow-sm"
         />
         <div className="flex space-x-3">
           <button 
@@ -121,7 +130,7 @@ export default function MoodTracker({ currentUser, partner }) {
           <button 
             onClick={handleSave}
             disabled={!selectedMood && !note.trim()}
-            className="flex-1 bg-primary text-white rounded-xl py-3 font-semibold text-sm shadow-md shadow-primary/30 hover:scale-[1.02] active:scale-95 transition-transform disabled:opacity-50 disabled:cursor-not-allowed disabled:hover:scale-100"
+            className="flex-1 bg-primary-pink text-white rounded-xl py-3 font-semibold text-sm shadow-md shadow-primary-pink/30 hover:scale-[1.02] active:scale-95 transition-transform disabled:opacity-50 disabled:cursor-not-allowed disabled:hover:scale-100"
           >
             Save Note
           </button>
@@ -141,13 +150,13 @@ export default function MoodTracker({ currentUser, partner }) {
           {['Sat', 'Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri'].map((day, i) => (
             <div key={day} className="flex flex-col items-center">
               {i === 6 ? (
-                <div className="w-1.5 h-12 bg-primary rounded-full mb-2"></div>
+                <div className="w-1.5 h-12 bg-primary-pink rounded-full mb-2"></div>
               ) : i === 3 || i === 4 ? (
                 <div className="w-1.5 h-8 bg-pink-200 rounded-full mb-2"></div>
               ) : (
                 <div className="w-1.5 h-4 bg-gray-200 rounded-full mb-2"></div>
               )}
-              <span className={`text-[10px] font-medium ${i === 6 ? 'text-primary font-bold' : 'text-gray-400'}`}>
+              <span className={`text-[10px] font-medium ${i === 6 ? 'text-primary-pink font-bold' : 'text-gray-400'}`}>
                 {day}
               </span>
             </div>

@@ -42,13 +42,13 @@ export default function Welcome() {
         </LoadingButton>
         <button 
           onClick={() => router.push('/auth/join-couple')}
-          className="w-full py-3.5 text-primary font-medium border-2 border-primary/20 rounded-lg hover:bg-primary/5 transition-colors"
+          className="w-full py-3.5 text-primary-pink font-medium border-2 border-primary-pink/20 rounded-lg hover:bg-primary-pink/5 transition-colors"
         >
           Join Your Partner 💕
         </button>
         <p className="text-center mt-6 text-sm text-gray-500">
           Already have an account?{' '}
-          <button onClick={() => router.push('/auth/login')} className="text-primary font-semibold hover:underline">
+          <button onClick={() => router.push('/auth/login')} className="text-primary-pink font-semibold hover:underline">
             Log In
           </button>
         </p>

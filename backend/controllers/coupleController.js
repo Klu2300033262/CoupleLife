@@ -15,7 +15,7 @@ const generateInviteCode = () => {
 
 exports.generateKey = async (req, res) => {
   try {
-    const firebase_uid = req.user.uid;
+    const firebase_uid = req.user.firebase_uid || req.user.uid;
     const user = await User.findOne({ firebase_uid });
 
     if (!user) return res.status(404).json({ error: 'User not found' });
@@ -81,7 +81,7 @@ exports.generateKey = async (req, res) => {
 exports.linkPartner = async (req, res) => {
   try {
     const { invite_code } = req.body;
-    const firebase_uid = req.user.uid; 
+    const firebase_uid = req.user.firebase_uid || req.user.uid; 
 
     const partner = await User.findOne({ firebase_uid });
     if (!partner) return res.status(404).json({ error: 'Partner not found' });
@@ -135,7 +135,7 @@ exports.linkPartner = async (req, res) => {
 exports.updateAnniversary = async (req, res) => {
   try {
     const { anniversary_date, relationship_started_at } = req.body;
-    const firebase_uid = req.user.uid;
+    const firebase_uid = req.user.firebase_uid || req.user.uid;
     const user = await User.findOne({ firebase_uid });
 
     if (!user || !user.couple_id) return res.status(404).json({ error: 'User or Couple not found' });
@@ -167,7 +167,7 @@ exports.updateAnniversary = async (req, res) => {
 
 exports.unlinkPartner = async (req, res) => {
   try {
-    const firebase_uid = req.user.uid;
+    const firebase_uid = req.user.firebase_uid || req.user.uid;
     const user = await User.findOne({ firebase_uid });
 
     if (!user || !user.couple_id) return res.status(404).json({ error: 'No active couple connection found' });

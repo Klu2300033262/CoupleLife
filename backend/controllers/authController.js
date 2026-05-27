@@ -51,7 +51,7 @@ exports.syncUser = async (req, res) => {
 
 exports.getCurrentUser = async (req, res) => {
   try {
-    const firebase_uid = req.user.uid;
+    const firebase_uid = req.user.firebase_uid || req.user.uid;
     const user = await User.findOne({ firebase_uid }).populate('partner_id').populate('couple_id');
     
     if (!user) {
@@ -81,7 +81,7 @@ exports.getCurrentUser = async (req, res) => {
 
 exports.updateProfile = async (req, res) => {
   try {
-    const firebase_uid = req.user.uid;
+    const firebase_uid = req.user.firebase_uid || req.user.uid;
     const { name, location } = req.body;
     
     const user = await User.findOne({ firebase_uid });
@@ -104,7 +104,7 @@ exports.updateProfile = async (req, res) => {
 
 exports.updateMood = async (req, res) => {
   try {
-    const firebase_uid = req.user.uid;
+    const firebase_uid = req.user.firebase_uid || req.user.uid;
     const { mood, note } = req.body;
     
     const user = await User.findOne({ firebase_uid });

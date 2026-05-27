@@ -1,4 +1,5 @@
 const admin = require('firebase-admin');
+const User = require('../models/User');
 
 const requireAuth = async (req, res, next) => {
   try {
@@ -24,7 +25,8 @@ const requireAuth = async (req, res, next) => {
       }
     }
 
-    req.user = decodedToken;
+    const dbUser = await User.findOne({ firebase_uid: decodedToken.uid });
+    req.user = dbUser || { ...decodedToken, firebase_uid: decodedToken.uid };
     next();
   } catch (error) {
     console.error('Auth middleware error:', error);
